@@ -128,122 +128,124 @@
     <div class="survey-container">
         <h2>Please Provide Your Valuable Feedback</h2>
 
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/email_icon.png" alt="Email Icon"></div>
-            <div>
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required autocomplete="email">
-            </div>
-        </div>
-
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/phone_icon.png" alt="Phone Icon"></div>
-            <div>
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required autocomplete="tel">
-            </div>
-        </div>
-
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/invoice_icon.png" alt="Invoice Icon"></div>
-            <div>
-                <label for="invoice">Invoice Number: (ما هو رقم فاتورتك؟) <span style="color: red;">*</span></label>
-                <input type="text" id="invoice" name="invoice" required autocomplete="off">
-            </div>
-        </div>
-
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/sales_icon.png" alt="Sales Staff Icon"></div>
-            <div>
-                <p>How would you rate the service provided by our Sales Staff? (كيف تقيم الخدمة التي يقدمها موظفو المبيعات لدينا؟)</p>
-                <div class="star-rating serviceRating">
-                    <span class="star" data-value="1">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
+        <form id="feedbackForm" action="#" method="POST">
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/email_icon.png" alt="Email Icon"></div>
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
             </div>
-        </div>
 
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/product_icon.png" alt="Product Icon"></div>
-            <div>
-                <p>How would you rate the Sales Staff's Product Knowledge? (كيف تقيم معرفة منتج موظفي المبيعات؟)</p>
-                <div class="star-rating productKnowledgeRating">
-                    <span class="star" data-value="1">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/phone_icon.png" alt="Phone Icon"></div>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
             </div>
-        </div>
 
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/suggest_icon.png" alt="Suggest Icon"></div>
-            <div>
-                <p>Did the Sales Staff suggest other products? (هل اقترح موظفو المبيعات منتجات أخرى؟)</p>
-                <div class="feedback-options suggestedProducts">
-                    <span class="feedback-option" data-value="yes">Yes</span>
-                    <span class="feedback-option" data-value="no">No</span>
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/invoice_icon.png" alt="Invoice Icon"></div>
+                <div>
+                    <label for="invoice">Invoice Number: (ما هو رقم فاتورتك؟) <span style="color: red;">*</span></label>
+                    <input type="text" id="invoice" name="invoice" required>
                 </div>
             </div>
-        </div>
 
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/shopping_icon.png" alt="Shopping Experience Icon"></div>
-            <div>
-                <p>How satisfied are you with your shopping experience? (ما مدى رضاك ​​عن تجربة التسوق الخاصة بك؟)</p>
-                <div class="star-rating shoppingExperience">
-                    <span class="star" data-value="1">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/sales_icon.png" alt="Sales Staff Icon"></div>
+                <div>
+                    <p>How would you rate the service provided by our Sales Staff? (كيف تقيم الخدمة التي يقدمها موظفو المبيعات لدينا؟)</p>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/promo_icon.png" alt="Promotions Icon"></div>
-            <div>
-                <p>Would you like to receive information about future Promotions or Sales? (هل ترغب في الحصول على معلومات حول العروض الترويجية أو المبيعات المستقبلية؟)</p>
-                <div class="feedback-options promotions">
-                    <span class="feedback-option" data-value="yes">Yes</span>
-                    <span class="feedback-option" data-value="no">No</span>
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/product_icon.png" alt="Product Icon"></div>
+                <div>
+                    <p>How would you rate the Sales Staff's Product Knowledge? (كيف تقيم معرفة منتج موظفي المبيعات؟)</p>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/recommend_icon.png" alt="Recommend Icon"></div>
-            <div>
-                <p>Would you recommend us to others? (هل تنصحنا للآخرين؟)</p>
-                <div class="feedback-options recommend">
-                    <span class="feedback-option" data-value="yes">Yes</span>
-                    <span class="feedback-option" data-value="no">No</span>
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/suggest_icon.png" alt="Suggest Icon"></div>
+                <div>
+                    <p>Did the Sales Staff suggest other products? (هل اقترح موظفو المبيعات منتجات أخرى؟)</p>
+                    <div class="feedback-options">
+                        <span class="feedback-option" data-value="yes">Yes</span>
+                        <span class="feedback-option" data-value="no">No</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/improve_icon.png" alt="Improve Icon"></div>
-            <div>
-                <label for="improve">What areas do you think we could improve? (ما هي المجالات التي تعتقد أنه يمكننا تحسينها؟)</label>
-                <textarea id="improve" name="improve" autocomplete="off"></textarea>
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/shopping_icon.png" alt="Shopping Experience Icon"></div>
+                <div>
+                    <p>How satisfied are you with your shopping experience? (ما مدى رضاك ​​عن تجربة التسوق الخاصة بك؟)</p>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="question-container">
-            <div class="question-icon"><img src="icons/name_icon.png" alt="Name Icon"></div>
-            <div>
-                <label for="name">Name (اسم) (optional): <span class="optional">(Optional)</span></label>
-                <input type="text" id="name" name="name" autocomplete="name">
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/promo_icon.png" alt="Promotions Icon"></div>
+                <div>
+                    <p>Would you like to receive information about future Promotions or Sales? (هل ترغب في الحصول على معلومات حول العروض الترويجية أو المبيعات المستقبلية؟)</p>
+                    <div class="feedback-options">
+                        <span class="feedback-option" data-value="yes">Yes</span>
+                        <span class="feedback-option" data-value="no">No</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <button onclick="submitFeedback()">Submit</button>
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/recommend_icon.png" alt="Recommend Icon"></div>
+                <div>
+                    <p>Would you recommend us to others? (هل تنصحنا للآخرين؟)</p>
+                    <div class="feedback-options">
+                        <span class="feedback-option" data-value="yes">Yes</span>
+                        <span class="feedback-option" data-value="no">No</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/improve_icon.png" alt="Improve Icon"></div>
+                <div>
+                    <label for="improve">What areas do you think we could improve? (ما هي المجالات التي تعتقد أنه يمكننا تحسينها؟)</label>
+                    <textarea id="improve" name="improve"></textarea>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-icon"><img src="icons/name_icon.png" alt="Name Icon"></div>
+                <div>
+                    <label for="name">Name (اسم) (optional): <span class="optional">(Optional)</span></label>
+                    <input type="text" id="name" name="name">
+                </div>
+            </div>
+
+            <button type="button" onclick="submitFeedback()">Submit</button>
+        </form>
     </div>
 
     <script>
@@ -285,55 +287,50 @@
                 return false; // Prevent form submission
             }
 
-            // Collect form data
+            // Gather form data
             const formData = {
                 email: document.getElementById("email").value,
                 phone: document.getElementById("phone").value,
                 invoice: invoiceNumber,
-                serviceRating: getStarRatingValue("serviceRating"),
-                productKnowledgeRating: getStarRatingValue("productKnowledgeRating"),
-                suggestedProducts: getFeedbackOptionValue("suggestedProducts"),
-                shoppingExperience: getStarRatingValue("shoppingExperience"),
-                promotions: getFeedbackOptionValue("promotions"),
-                recommend: getFeedbackOptionValue("recommend"),
-                improve: document.getElementById("improve").value,
+                salesStaffRating: document.querySelector('.star-rating:nth-of-type(1) .selected')?.length || 0,
+                productKnowledgeRating: document.querySelector('.star-rating:nth-of-type(2) .selected')?.length || 0,
+                suggestedProducts: document.querySelector('.feedback-options:nth-of-type(1) .selected')?.dataset.value,
+                shoppingExperienceRating: document.querySelector('.star-rating:nth-of-type(3) .selected')?.length || 0,
+                futurePromotions: document.querySelector('.feedback-options:nth-of-type(2) .selected')?.dataset.value,
+                recommend: document.querySelector('.feedback-options:nth-of-type(3) .selected')?.dataset.value,
+                improvementAreas: document.getElementById("improve").value,
                 name: document.getElementById("name").value
             };
 
-            // Send data to Google Sheets
-            fetch('https://script.google.com/macros/s/AKfycbxtOCdwsmmL-ZVu2hT-W6Yhl9sn3csoWFX4KlJqw305cTxXeeIO3QlvjwOJq_b-wG0/exec', {
-                method: 'POST',
+            // Send data to SeaCloud
+            fetch("https://cloud.seatable.io/dtable/links/3338e99dacf14a71ba84", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer c6ba4e751fac1877a3a8ce1ee603f22ee6c7e67e" // Replace with your actual API key
                 },
                 body: JSON.stringify(formData)
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    // If the response is not OK, read the response text
+                    return response.text().then(text => {
+                        throw new Error(text); // Throw an error with the response text
+                    });
                 }
-                return response.text();
+                return response.json(); // Parse JSON if the response is OK
             })
             .then(data => {
                 alert("Thank you for your feedback!");
-                console.log(data);
+                // Optionally reset the form or redirect
+                document.getElementById("feedbackForm").reset();
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('There was a problem with the fetch operation:', error);
                 alert("There was an error submitting your feedback. Please try again.");
             });
 
             return false; // Prevent default form submission
-        }
-
-        function getStarRatingValue(ratingClass) {
-            const stars = document.querySelectorAll(`.${ratingClass} .star.selected`);
-            return stars.length; // Return the number of selected stars
-        }
-
-        function getFeedbackOptionValue(optionClass) {
-            const selectedOption = document.querySelector(`.${optionClass} .feedback-option.selected`);
-            return selectedOption ? selectedOption.dataset.value : null; // Return the value of the selected option
         }
     </script>
 
