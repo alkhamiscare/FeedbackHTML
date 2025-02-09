@@ -280,58 +280,51 @@
             });
         });
 
-        function submitFeedback() {
-            const invoiceNumber = document.getElementById("invoice").value;
-            if (invoiceNumber.trim() === "") {
-                alert("Invoice Number is required. (رقم الفاتورة مطلوب.)");
-                return false; // Prevent form submission
-            }
+function submitFeedback() {
+    const invoiceNumber = document.getElementById("invoice").value;
+    if (invoiceNumber.trim() === "") {
+        alert("Invoice Number is required. (رقم الفاتورة مطلوب.)");
+        return false;
+    }
 
-            // Gather form data
-            const formData = {
-                email: document.getElementById("email").value,
-                phone: document.getElementById("phone").value,
-                invoice: invoiceNumber,
-                salesStaffRating: document.querySelector('.star-rating:nth-of-type(1) .selected')?.length || 0,
-                productKnowledgeRating: document.querySelector('.star-rating:nth-of-type(2) .selected')?.length || 0,
-                suggestedProducts: document.querySelector('.feedback-options:nth-of-type(1) .selected')?.dataset.value,
-                shoppingExperienceRating: document.querySelector('.star-rating:nth-of-type(3) .selected')?.length || 0,
-                futurePromotions: document.querySelector('.feedback-options:nth-of-type(2) .selected')?.dataset.value,
-                recommend: document.querySelector('.feedback-options:nth-of-type(3) .selected')?.dataset.value,
-                improvementAreas: document.getElementById("improve").value,
-                name: document.getElementById("name").value
-            };
+    // Gather form data
+    const formData = {
+        table_name: "feedhtml", // Change this to match your SeaTable table name
+        rows: [{
+            Email: document.getElementById("email").value,
+            Phone: document.getElementById("phone").value,
+            Invoice: invoiceNumber,
+            "Sales Staff Rating": document.querySelectorAll('.star-rating:nth-of-type(1) .selected').length || 0,
+            "Product Knowledge Rating": document.querySelectorAll('.star-rating:nth-of-type(2) .selected').length || 0,
+            "Suggested Products": document.querySelector('.feedback-options:nth-of-type(1) .selected')?.dataset.value,
+            "Shopping Experience Rating": document.querySelectorAll('.star-rating:nth-of-type(3) .selected').length || 0,
+            "Future Promotions": document.querySelector('.feedback-options:nth-of-type(2) .selected')?.dataset.value,
+            "Recommend": document.querySelector('.feedback-options:nth-of-type(3) .selected')?.dataset.value,
+            "Improvement Areas": document.getElementById("improve").value,
+            Name: document.getElementById("name").value
+        }]
+    };
 
-            // Send data to SeaCloud
-            fetch("https://cloud.seatable.io/dtable/links/3338e99dacf14a71ba84", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer c6ba4e751fac1877a3a8ce1ee603f22ee6c7e67e" // Replace with your actual API key
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    // If the response is not OK, read the response text
-                    return response.text().then(text => {
-                        throw new Error(text); // Throw an error with the response text
-                    });
-                }
-                return response.json(); // Parse JSON if the response is OK
-            })
-            .then(data => {
-                alert("Thank you for your feedback!");
-                // Optionally reset the form or redirect
-                document.getElementById("feedbackForm").reset();
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-                alert("There was an error submitting your feedback. Please try again.");
-            });
+    fetch("https://cloud.seatable.io/api/v2.1/dtables/{f46f8df3-de7b-4bd7-a62e-03aecc3c3e47}/rows/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "c6ba4e751fac1877a3a8ce1ee603f22ee6c7e67e" // Replace with your actual API key
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Thank you for your feedback!");
+        document.getElementById("feedbackForm").reset();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("There was an error submitting your feedback. Please try again.");
+    });
 
-            return false; // Prevent default form submission
-        }
+    return false;
+}
     </script>
 
 </body>
